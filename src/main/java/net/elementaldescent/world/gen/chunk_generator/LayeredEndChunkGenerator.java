@@ -178,7 +178,7 @@ public class LayeredEndChunkGenerator extends ChunkGenerator {
                                        int localX, int localZ, double distFromCenter) {
         // Steeper falloff — stays positive only within ~100 blocks
         double islandSignal = 4.0 - (distFromCenter / 25.0)
-                + centralIslandNoise.getValue(worldX * 0.02, worldZ * 0.02);
+                + centralIslandNoise.noise((float)(worldX * 0.02), (float)(worldZ * 0.02));
 
         if (islandSignal > 0.0) {
             int islandTop    = 64 + (int)(islandSignal * 2);
@@ -241,7 +241,7 @@ public class LayeredEndChunkGenerator extends ChunkGenerator {
 
         if (distFromCenter < CENTRAL_ISLAND_RADIUS) {
             double islandSignal = 4.0 - (distFromCenter / 25.0)
-                    + centralIslandNoise.getValue(x * 0.02, z * 0.02);
+                    + centralIslandNoise.noise((float)(x * 0.02), (float)(z * 0.02));
             if (islandSignal > 0.0) {
                 int top = 64 + (int)(islandSignal * 2);
                 int bottom = 55 - (int)(islandSignal * 2);
