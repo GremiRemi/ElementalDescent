@@ -51,18 +51,5 @@ public class ElementalDescentDimensions {
         var dimensionTypes = context.lookup(Registries.DIMENSION_TYPE);
         var biomes = context.lookup(Registries.BIOME);
         var noiseSettings = context.lookup(Registries.NOISE_SETTINGS);
-
-        Climate.ParameterList parameterList = new Climate.ParameterList<>(List.of(Pair.of(new Climate.ParameterPoint(Climate.Parameter.point(0.0F),Climate.Parameter.point(0.0F),Climate.Parameter.point(0.0F),Climate.Parameter.point(0.0F),Climate.Parameter.point(0.0F),Climate.Parameter.point(0.0F), 3L), )));
-        MultiNoiseBiomeSource biomeSource = MultiNoiseBiomeSource.createFromList(parameterList);
-
-        NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
-                biomeSource,
-                noiseSettings.getOrThrow(NoiseGeneratorSettings.CAVES)
-        );
-
-        context.register(OTHERSIDE_STEM, new LevelStem(
-                dimensionTypes.getOrThrow(OTHERSIDE_TYPE),
-                noiseBasedChunkGenerator
-        ));
     }
 }
