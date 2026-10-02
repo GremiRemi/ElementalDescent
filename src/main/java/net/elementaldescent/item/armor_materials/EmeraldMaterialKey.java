@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsEmerald;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsEmerald;
 
 public class EmeraldMaterialKey {
     public static final int EMERALD_BASE_DURABILITY = 15;

@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsTopaz;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsTopaz;
 
 public class TopazMaterialKey {
     public static final int TOPAZ_BASE_DURABILITY = 15;

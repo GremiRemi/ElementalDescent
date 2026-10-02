@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsEnderite;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsEnderite;
 
 public class EnderiteMaterialKey {
     public static final int ENDERITE_BASE_DURABILITY = 14;

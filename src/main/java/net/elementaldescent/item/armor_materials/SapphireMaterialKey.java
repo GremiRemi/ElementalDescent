@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsSapphire;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsSapphire;
 
 public class SapphireMaterialKey {
     public static final int SAPPHIRE_BASE_DURABILITY = 15;

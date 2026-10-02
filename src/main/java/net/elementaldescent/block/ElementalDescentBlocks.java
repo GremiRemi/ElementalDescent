@@ -1,5 +1,7 @@
 package net.elementaldescent.block;
 
+import java.util.function.Function;
+
 import net.elementaldescent.ElementalDescent;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,32 +13,24 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-import java.util.function.Function;
-
 public class ElementalDescentBlocks {
-    public static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
-        ResourceKey<Block> blockKey = keyOfBlock(name);
-        Block block = blockFactory.apply(settings.setId(blockKey));
-
-        if (shouldRegisterItem) {
-            ResourceKey<Item> itemKey = keyOfItem(name);
-
-            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
-            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
-        }
-
-        return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+    public static Block create(String name, Function<BlockBehaviour.Properties, Block> function) {
+        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name))));
+        registerBlock(name, toRegister);
+        return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name), toRegister);
     }
 
-    private static ResourceKey<Block> keyOfBlock(String name) {
-        return ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name));
+    public static void registerBlock(String name, Block block) {
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name),
+                new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
+                        .setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name)))));
     }
 
-    private static ResourceKey<Item> keyOfItem(String name) {
-        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name));
+    public static ResourceKey<Block> getID(Block block) {
+        return BuiltInRegistries.BLOCK.getResourceKey(block).get();
     }
 
-    public static void registerElementalModBlocks() {
-        ElementalDescent.LOGGER.info("Registering Blocks for " + ElementalDescent.MOD_ID);
+    public static void registerModBlocks() {
+        ElementalDescent.LOGGER.info("Registering Mod Blocks for " +  ElementalDescent.MOD_ID);
     }
 }

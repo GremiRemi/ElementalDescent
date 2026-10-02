@@ -11,7 +11,8 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsAmethyst;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsSilver;
+
 
 public class SilverMaterialKey {
     public static final int SILVER_BASE_DURABILITY = 15;

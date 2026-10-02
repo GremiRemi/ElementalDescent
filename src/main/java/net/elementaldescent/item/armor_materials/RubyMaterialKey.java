@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsRuby;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsRuby;
 
 public class RubyMaterialKey {
     public static final int RUBY_BASE_DURABILITY = 15;

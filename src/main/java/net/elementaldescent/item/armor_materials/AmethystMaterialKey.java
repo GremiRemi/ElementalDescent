@@ -11,7 +11,7 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ItemTags.repairsAmethyst;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsAmethyst;
 
 public class AmethystMaterialKey {
     public static final int AMETHYST_BASE_DURABILITY = 15;

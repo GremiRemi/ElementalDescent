@@ -10,18 +10,17 @@ import net.minecraft.world.item.Item;
 
 import java.util.function.Function;
 
-public class ElementalDescentItems {
-    public static Item register(ResourceKey<Item> itemKey, Function<Item.Properties, Item> itemFactory, Item.Properties settings) {
-        // Create the item instance.
-        Item item = itemFactory.apply(settings.setId(itemKey));
-
-        // Register the item.
-        Registry.register(BuiltInRegistries.ITEM, itemKey, item);
-
-        return item;
+public class ElementalDescentItems{
+    public static Item registerItem(String  name, Function<Item.Properties, Item> function) {
+        return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name),
+                function.apply(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name)))));
     }
 
-    public static void registerElementalModItems() {
+    public static ResourceKey<Item> getID(Item item) {
+        return BuiltInRegistries.ITEM.getResourceKey(item).get();
+    }
+
+    public static void registerElementalDescentItems() {
         ElementalDescent.LOGGER.info("Registering Items for " + ElementalDescent.MOD_ID);
     }
 }
