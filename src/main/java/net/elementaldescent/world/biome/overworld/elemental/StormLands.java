@@ -1,4 +1,4 @@
-package net.elementaldescent.world.biome.nether;
+package net.elementaldescent.world.biome.overworld.elemental;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -11,26 +11,26 @@ import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 
-public class GoldenForest {
-    private static Biome buildGoldenForest(BootstrapContext<Biome> context) {
+public class StormLands {
+    private static Biome buildStormLands(BootstrapContext<Biome> context) {
         return new Biome.BiomeBuilder()
-                .hasPrecipitation(false)
-                .temperature(2.0f)
-                .downfall(0.0f)
+                .hasPrecipitation(true)
+                .temperature(0.8f)
+                .downfall(1.0f)
                 .temperatureAdjustment(Biome.TemperatureModifier.NONE)
                 .specialEffects(new BiomeSpecialEffects.Builder()
-                        .waterColor(0x3f76e4)
+                        .waterColor(0x3d4a52)
                         .build())
                 .putAttributes(EnvironmentAttributeMap.builder()
-                        .set(EnvironmentAttributes.FOG_COLOR, 0x3d2e05)
+                        .set(EnvironmentAttributes.FOG_COLOR, 0x2b2f36)
+                        .set(EnvironmentAttributes.FOG_END_DISTANCE, 64.0f)
+                        .set(EnvironmentAttributes.SKY_COLOR, 0x2b2f36)
                         .build())
                 .mobSpawnSettings(new MobSpawnSettings.Builder()
-                        .addSpawn(MobCategory.MONSTER, 5,
-                                new MobSpawnSettings.SpawnerData(EntityTypes.PIGLIN, 3, 4))
-                        .addSpawn(MobCategory.MONSTER, 9,
-                                new MobSpawnSettings.SpawnerData(EntityTypes.HOGLIN, 3, 4))
-                        .addSpawn(MobCategory.CREATURE, 60,
-                                new MobSpawnSettings.SpawnerData(EntityTypes.STRIDER, 1, 2))
+                        .addSpawn(MobCategory.MONSTER, 10,
+                                new MobSpawnSettings.SpawnerData(EntityTypes.CREEPER, 1, 2))
+                        .addSpawn(MobCategory.MONSTER, 3,
+                                new MobSpawnSettings.SpawnerData(EntityTypes.WITCH, 1, 1))
                         .build())
                 .generationSettings(new BiomeGenerationSettings.Builder(
                         context.lookup(Registries.PLACED_FEATURE),

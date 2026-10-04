@@ -1,4 +1,4 @@
 package net.elementaldescent.world.biome.overworld.surface;
 
-public class Prarie {
+public class Prairie {
 }
