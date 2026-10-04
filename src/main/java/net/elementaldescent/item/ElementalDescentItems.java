@@ -1,6 +1,10 @@
 package net.elementaldescent.item;
 
 import net.elementaldescent.ElementalDescent;
+import net.elementaldescent.item.custom_items.CustomWeapons;
+import net.elementaldescent.item.custom_items.EndItems;
+import net.elementaldescent.item.custom_items.EnderEyes;
+import net.elementaldescent.item.custom_items.SilverItems;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -22,5 +26,9 @@ public class ElementalDescentItems{
 
     public static void registerElementalDescentItems() {
         ElementalDescent.LOGGER.info("Registering Items for " + ElementalDescent.MOD_ID);
+        CustomWeapons.registerItems();
+        EnderEyes.registerItems();
+        EndItems.registerItems();
+        SilverItems.registerItems();
     }
 }

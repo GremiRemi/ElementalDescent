@@ -51,4 +51,6 @@ public class CustomWeapons {
 
     public static final Item HELIOS_KATANA = registerItem("helios_katana", Item::new);
     public static final Item HYPERION_KATANA = registerItem("hyperion_katana", Item::new);
+
+    public static void registerItems() {}
 }

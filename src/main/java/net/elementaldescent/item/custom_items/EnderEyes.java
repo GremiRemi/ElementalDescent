@@ -30,4 +30,6 @@ public class EnderEyes {
     public static final Item ROGUE_SHARD = registerItem("rogue_shard", Item::new);
     public static final Item UNDEAD_SHARD = registerItem("undead_shard", Item::new);
     public static final Item PURE_SHARD = registerItem("pure_shard", Item::new);
+
+    public static void registerItems() {}
 }

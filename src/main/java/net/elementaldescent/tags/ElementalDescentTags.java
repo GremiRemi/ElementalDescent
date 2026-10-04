@@ -9,6 +9,10 @@ import net.minecraft.world.level.block.Block;
 
 public class ElementalDescentTags {
     public static class Blocks {
+        public static final TagKey<Block> needsEnderiteTool = createTag("needs_enderite_tool");
+        public static final TagKey<Block> incorrectForEnderiteTool = createTag("incorrect_enderite_tool");
+
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name));
         }

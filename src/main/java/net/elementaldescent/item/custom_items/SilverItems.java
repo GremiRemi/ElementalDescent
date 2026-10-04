@@ -18,4 +18,5 @@ public class SilverItems {
     public static final Item SILVER_SHOVEL = registerItem("silver_shovel", Item::new);
     public static final Item SILVER_HOE = registerItem("silver_hoe", Item::new);
 
+    public static void registerItems() {}
 }

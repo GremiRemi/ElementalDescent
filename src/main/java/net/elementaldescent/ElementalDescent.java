@@ -1,5 +1,8 @@
 package net.elementaldescent;
 
+import net.elementaldescent.block.ElementalDescentBlocks;
+import net.elementaldescent.item.ElementalDescentItems;
+import net.elementaldescent.item.item_groups.ElementalDescentItemGroups;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.resources.Identifier;
@@ -14,9 +17,9 @@ public class ElementalDescent implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ElementalDescentItems.registerElementalDescentItems();
+		ElementalDescentBlocks.registerElementalDescentBlocks();
+		ElementalDescentItemGroups.registerElementalDescentItemGroups();
 
 		LOGGER.info("Hello Fabric world!");
 	}
