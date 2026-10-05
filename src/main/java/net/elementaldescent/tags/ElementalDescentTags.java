@@ -26,6 +26,8 @@ public class ElementalDescentTags {
         public static final TagKey<Item> repairsAmethyst =  createTag("repairs_amethyst");
         public static final TagKey<Item> repairsSapphire = createTag("repairs_sapphire");
         public static final TagKey<Item> repairsSilver = createTag("repairs_silver");
+        public static final TagKey<Item> repairsAetherite = createTag("repairs_aetherite");
+        public static final TagKey<Item> repairsVoidite = createTag("repairs_void");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, name));

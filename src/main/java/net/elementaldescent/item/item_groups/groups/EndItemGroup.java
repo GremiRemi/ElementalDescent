@@ -12,11 +12,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class EnderiteItemGroup {
-    public static final ResourceKey<CreativeModeTab> ENDERITE_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, "enderite_item_group"));
-    public static final CreativeModeTab ENDERITE_ITEM_GROUP = FabricCreativeModeTab.builder()
+public class EndItemGroup {
+    public static final ResourceKey<CreativeModeTab> END_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, "end_item_group"));
+    public static final CreativeModeTab END_ITEM_GROUP = FabricCreativeModeTab.builder()
             .icon(() -> new ItemStack(EndItems.ENDERITE_INGOT))
-            .title(Component.translatable("itemgroup.enderite_items"))
+            .title(Component.translatable("itemgroup.end_item_group"))
             .displayItems((parameters, output) -> {
                 output.accept(EndItems.ENDERITE_INGOT);
                 output.accept(EndItems.ENDERITE_SCRAP);
@@ -38,6 +38,6 @@ public class EnderiteItemGroup {
             }).build();
 
     public static void registerItemGroup() {
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ENDERITE_ITEM_GROUP_KEY, ENDERITE_ITEM_GROUP);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, END_ITEM_GROUP_KEY, END_ITEM_GROUP);
     }
 }

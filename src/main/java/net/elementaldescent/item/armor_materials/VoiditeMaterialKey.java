@@ -11,14 +11,14 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 
 import java.util.Map;
 
-import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsTopaz;
+import static net.elementaldescent.tags.ElementalDescentTags.Items.repairsVoidite;
 
-public class TopazMaterialKey {
-    public static final int TOPAZ_BASE_DURABILITY = 15;
+public class VoiditeMaterialKey {
+    public static final int VOIDITE_BASE_DURABILITY = 15;
 
-    public static final ResourceKey<EquipmentAsset> TOPAZ_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, "topaz"));
-    public static final ArmorMaterial TOPAZ_ARMOR_MATERIAL = new ArmorMaterial(
-            TOPAZ_BASE_DURABILITY,
+    public static final ResourceKey<EquipmentAsset> VOIDITE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(ElementalDescent.MOD_ID, "voidite"));
+    public static final ArmorMaterial VOIDITE_ARMOR_MATERIAL = new ArmorMaterial(
+            VOIDITE_BASE_DURABILITY,
             Map.of(
                     ArmorType.HELMET, 3,
                     ArmorType.CHESTPLATE, 8,
@@ -29,7 +29,7 @@ public class TopazMaterialKey {
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             0.0f,
             0.0f,
-            repairsTopaz,
-            TOPAZ_ARMOR_MATERIAL_KEY
+            repairsVoidite,
+            VOIDITE_ARMOR_MATERIAL_KEY
     );
 }

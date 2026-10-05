@@ -35,6 +35,8 @@ public class ElementalDescentBlocks {
 
     public static void registerElementalDescentBlocks() {
         ElementalDescent.LOGGER.info("Registering Blocks for " +  ElementalDescent.MOD_ID);
+        AzureBlocks.registerBlocks();
+        BloodBlocks.registerBlocks();
         EchoBlocks.registerBlocks();
         EndBlocks.registerBlocks();
         FirBlocks.registerBlocks();
